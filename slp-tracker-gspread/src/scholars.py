@@ -93,9 +93,9 @@ def get_stats(spreadsheet_name, worksheet_name):
             print(f"\nManager {manager}")
             sheet = gc.open(manager_sheet)
 
-        # If the spreadsheet does not exist, create it in folder specified in authentication.json
+        # If the spreadsheet does not exist, create it in folder specified in auth.json
         except gspread.exceptions.SpreadsheetNotFound:
-            with open("authentication.json") as f:
+            with open("auth.json") as f:
                 data = json.load(f)
             sheet = gc.create(manager_sheet, data["folder_id"])
 

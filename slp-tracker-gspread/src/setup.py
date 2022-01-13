@@ -4,7 +4,7 @@ import gspread
 from main import update
 
 # Login using the .json file
-gc = gspread.service_account(filename="authentication.json")
+gc = gspread.service_account(filename="auth.json")
 
 def create_scholars_sheet():
     """Create a new Scholars spreadsheet"""
@@ -12,7 +12,7 @@ def create_scholars_sheet():
         sheet = gc.open("Stats")
         print("Found existing Scholar Stats spreadsheet")
     except gspread.exceptions.SpreadsheetNotFound:
-        with open("authentication.json") as f:
+        with open("auth.json") as f:
             data = json.load(f)
             sheet= gc.create("Stats", data["folder_id"])
             print("Creating Scholar Stats spreadsheet")

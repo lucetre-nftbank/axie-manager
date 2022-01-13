@@ -6,7 +6,7 @@ from binance import Client
 client = Client()
 
 # Login using the .json file
-gc = gspread.service_account(filename="authentication.json")
+gc = gspread.service_account(filename="auth.json")
 
 
 def ws_df(ws):
