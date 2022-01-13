@@ -30,19 +30,19 @@ $ pip install <package>
 ## Setup
 Start by cloning the repository. 
 
-Next, get your authentication.json file, by following the steps below carefully. Or follow the instructions from this (starts from 1:58) [video](https://youtu.be/6zeDGeGGHx4?t=118)
+Next, get your auth.json file, by following the steps below carefully. Or follow the instructions from this (starts from 1:58) [video](https://youtu.be/6zeDGeGGHx4?t=118)
 
 If you prefer written instructions follow the instructions below:
 - Enable API access for the new project [instructions](https://docs.gspread.org/en/latest/oauth2.html#enable-api-access-for-a-project).
-- Creating the `authentication.json file` [instructions](https://docs.gspread.org/en/latest/oauth2.html#for-bots-using-service-account).
+- Creating the `auth.json file` [instructions](https://docs.gspread.org/en/latest/oauth2.html#for-bots-using-service-account).
 
 After follow the instructions above, last things you need to do is this:
-- Save your `authentication.json` file in the same folder as you saved the files for this script.
-- Open `authentication.json` and copy the email behind `"client_email":`
+- Save your `auth.json` file in the same folder as you saved the files for this script.
+- Open `auth.json` and copy the email behind `"client_email":`
 ![auth](https://github.com/StephanAkkerman/Axie_Manager_Bot/blob/main/img/authentication.png)
 - Open Google Drive and go to the folder that you want the bot to make the spreadsheets in, right click on that folder and press share
 ![drive1](https://github.com/StephanAkkerman/Axie_Manager_Bot/blob/main/img/drive.png)
-- Share the folder with the client email out of `authentication.json`
+- Share the folder with the client email out of `auth.json`
 ![drive2](https://github.com/StephanAkkerman/Axie_Manager_Bot/blob/main/img/drive2.png)
 
 Then after that is done, go to the folder where this repository is stored and execute the following code block:
