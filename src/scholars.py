@@ -1,5 +1,6 @@
 # Imports
 import math
+import time
 
 # > Standard library
 import requests
@@ -88,22 +89,27 @@ def get_stats(spreadsheet_name, worksheet_name):
 
         # Open the spreadsheet
         try:
-            sheet = gc.open(f"Manager {manager}")
+            manager_sheet = f"{manager}"
+            print(f"\nManager {manager}")
+            sheet = gc.open(manager_sheet)
 
         # If the spreadsheet does not exist, create it in folder specified in authentication.json
         except gspread.exceptions.SpreadsheetNotFound:
             with open("authentication.json") as f:
                 data = json.load(f)
-            sheet = gc.create(f"Manager {manager}", data["folder_id"])
+            sheet = gc.create(manager_sheet, data["folder_id"])
 
         # Get scholars corresponding with this managers
         scholar_names = df.loc[df["Manager"] == manager]["name"].tolist()
 
         # Update every scholar
         for scholar_name in scholar_names:
-            
+            if scholar_name == None:
+                print(f"Skipping unregistered scholar...")
+                continue
+                
             print(f"Updating {scholar_name}'s stats", end=' - ')
-
+            
             # Get the row from the df
             scholar_df = df.loc[df["name"] == scholar_name]
 
@@ -136,7 +142,7 @@ def get_stats(spreadsheet_name, worksheet_name):
 
             # If it does not exist, make one
             except gspread.exceptions.WorksheetNotFound:
-                ws = add_worksheet(scholar_name, f"Manager {manager}")
+                ws = add_worksheet(scholar_name, manager_sheet)
 
             # Get the existing worksheet as dataframe
             existing = ws_df(ws)
@@ -194,15 +200,16 @@ def get_stats(spreadsheet_name, worksheet_name):
             total_lifetime,
             total_scholar_share,
             daily_slp / len(scholar_names),
-            f"Manager {manager}",
+            manager_sheet,
         )
         # Scholar Overview shows everyone's daily SLP
         update_sheet(
             "Scholar Overview",
             pd.DataFrame([scholar_dict]).set_index("Date"),
-            f"Manager {manager}",
+            manager_sheet,
         )
         print(f"Updated {manager}'s overview")
+        time.sleep(20)
 
 
 def get_scholars(spreadsheet_name, worksheet_name):
