@@ -31,9 +31,8 @@ def create_scholars_sheet():
         "A1:F1",
         [
             [
-                "Scholar Name",
                 "Manager",
-                "Scholar Share",
+                "Scholar Name",
                 "Address",
             ]
         ],
