@@ -155,7 +155,7 @@ def get_stats(spreadsheet_name, worksheet_name):
             # df = pd.concat([df, get_winrate(address)], axis=1)
 
             # Combine the dataframes
-            combined = scholar_df.combine_first(existing)
+            combined = existing.append(scholar_df)
 
             # Do calculations
             combined["SLP Diff"] = combined["Game SLP"].diff()
@@ -193,7 +193,7 @@ def get_stats(spreadsheet_name, worksheet_name):
             scholar_dict[scholar_name] = gained
             
             if (i+1) % 10 == 0:
-                time.sleep(10)
+                time.sleep(20)
 
         # Scholar Overview shows everyone's daily SLP
         update_sheet(
