@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "iconic-works-338002",
+  "private_key_id": "8f63507344ef2085533433685e67d02328fd54a4",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCsoCyR8Nj4mo/Z\np+6YapTSRy7VuowsmTnPPvFxP4NXkaZpNO7o0MltwHWYnLcMpK5W6WajAG2FciJv\ncaR0/zFp6w3JVlornO0QrKi8L2IhZhMV/ysHuaC1uLYv8K4pqH8fHacy9B+H/ZZH\nAvBGT8N8LdEm48q3JqkWbR+yKJotUy7AqBEL+9HhIcSJRFyLC0WBfXXuJECZF5rf\n5TSkVn6QGiVgcYxtbY8qLIorqobFG4hasiW1cTe4qp7Lv4/n9ibsWhE2GTFRWFZj\nZ9l5m5h8+SykTEzkOeudUsoj55OmNv6gC8skifeWrCGC5tARlKdnVNnUGg6EeLkd\nLtaJGGMdAgMBAAECggEAD1s4W8s3IfZt8YjU2s4wavxWGEE+EwGWeO86fz6NKo8U\nZKuGzUM1iAPk8iyOxBsqPyUIMlvpYkOi+JL9dEL3XFrCoTSDVPnixOb3I7Z7Xkk8\nTWqjo05KE6BY5K7eb2pD1LrIkunQnEJcyfhi835I/5T71B/TerN/uzT96tVd0cY9\nLYCgjpC08omqnqtAxWCvHWhrfv4BFkDjDDlnzuVVZfhIEePf400EaE18x5SiYWmp\nsjUY5PNFr6nv9Q+TZ1j9yNxU4izvJVDl86i5LNqcdH6YW1NK3DXS2th2on4Rhwy1\npmG5NUrLgcdqT3RZfH0WqXsfo4+35T0st6+vFstLqQKBgQDTXNT2RyTnA5b3wSu3\nlEKcKB7eAoGFDNoS3Y04Oh6D82qUdbjFHsAO4PoKQq2H0ooF2hW+zfHDgnGH2rYv\nJa47luPtoa7R1LdlgipcLoKG0ECdzD0NNagsLcaIigCbX7cXc8Ys0yNXDVJ54v7r\n1DBBfwiLv2ZzxRUuQjq74PdT1wKBgQDRFQ6lH5dxne6wqfqiTTlnIKg8b6dLvVVz\nDw7URGe9scbsxU/t5bDwYEyI/yUhz4aSOmgZiAdJOdcY6ujdEuJCjBTYB+iwtflo\n0dd97TnbWjXXkFMgcHMNIOO/2MBqTnshQ08IiZtI9ANSfL+KRg+wAPxAFk+C/mXT\n4pON25NiKwKBgBLYHPiUITsje8s9ArvMUSABB7d9e7S0D6FM9XFE5UGYazEvSbjx\nY+gvsLtHdJc+cyXQas3nKJ3ovFyDaGjNsDoJ2upt1ttIXs2DDGnJj8ObP5eSBQNv\nfD3sGt5Dh4hSwU0q+kk2zdjODENntJisA11jiQyElQrPUHMeXoQvq31jAoGAXxvp\nEYwRZAmnro1kCbh/SD4+yV8xBu8Vk8VhxYVoe44HI2WOOnWly3LC3f7ScVLpsFMJ\nT7PlPJYnFpqlWwtgCU2Xnb3bR6c/0ULDd/EVxIaAv5JTfgopC+vOLlL3FGSm9jac\nGRIfpUv6xucgalH8iN+p361GdhwrTftfi8Q6gwkCgYARyvVltO62aK8Pi0sgx68N\nbDOYUASdzQvLV8okgp34iGiHKaL7N8Lgm3g/cA2baKpYxpV5U7BDQUe77I5HDZ1N\n+bje7tPc/p1WYxMC24V4M1dXQcKsJDrbVSlAGN7i4Wu5Lmi8l3duJSJDHA0bSf3g\nGUf3vaDzd1vjRA92VMB6gA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "gspreadaccount@iconic-works-338002.iam.gserviceaccount.com",
+  "client_id": "111692361031688019996",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gspreadaccount%40iconic-works-338002.iam.gserviceaccount.com",
+  "folder_id": "1vET68QciZa9Dn6sguv2Qq1wyMxjG6uhM"
+}
