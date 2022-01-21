@@ -49,7 +49,7 @@ async def market(ctx, q1='https://marketplace.axieinfinity.com/axie/?class=Bird&
             utils.plot_fig(df)
             file = discord.File("market.png", filename='market.png')
             embed = discord.Embed(color=0xff0000)
-            embed.description = content + f'Total Price: {sum(prices)}'
+            embed.description = content + f'Total Price: {sum(prices)} ETH'
             embed = embed.set_image(url="attachment://market.png")
             if reset_flag == True:
                 break
