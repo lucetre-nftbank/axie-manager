@@ -94,7 +94,7 @@ def message(queries, ethusd):
         if len(criteria["speed"]) == 2:
             content += f'\nSpeed: {json.dumps(criteria["speed"])}'
         if len(criteria["hp"]) == 2:
-            content += f'\HP: {json.dumps(criteria["hp"])}'
+            content += f'\nHP: {json.dumps(criteria["hp"])}'
         if len(criteria["skill"]) == 2:
             content += f'\nSkill: {json.dumps(criteria["skill"])}'
         if len(criteria["morale"]) == 2:
