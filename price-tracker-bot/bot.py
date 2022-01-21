@@ -49,14 +49,14 @@ async def market(ctx, q1='https://marketplace.axieinfinity.com/axie/?class=Bird&
             utils.plot_fig(df)
             file = discord.File("market.png", filename='market.png')
             embed = discord.Embed(color=0xff0000)
-            embed.description = content
+            embed.description = content + f'Total Price: {sum(prices)}'
             embed = embed.set_image(url="attachment://market.png")
             if reset_flag == True:
                 break
             await ctx.send(file=file, embed=embed)
             if reset_flag == True:
                 break
-            await asyncio.sleep(10)
+            await asyncio.sleep(60)
 
         except Exception as e:
             await ctx.send(f"An error occured: {e}")

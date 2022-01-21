@@ -9,6 +9,8 @@ class AxieCriterion:
         parts = []
         speeds = []
         hps = []
+        skills = []
+        morales = []
         for param in params.split('&'):
             attr, val = param.split('=')
             if attr == 'class':
@@ -19,8 +21,15 @@ class AxieCriterion:
                 speeds.append(int(val))
             elif attr == 'hp':
                 hps.append(int(val))
+            elif attr == 'skill':
+                skills.append(int(val))
+            elif attr == 'morale':
+                morales.append(int(val))
+                
         speeds = sorted(speeds)
         hps = sorted(hps)
+        skills = sorted(skills)
+        morales = sorted(morales)
         
         self.body = {
             "operationName": "GetAxieBriefList",
@@ -57,12 +66,16 @@ class AxieCriterion:
             self.body["variables"]["criteria"]["speed"] = speeds
         if len(hps) == 2:
             self.body["variables"]["criteria"]["hp"] = hps
+        if len(skills) == 2:
+            self.body["variables"]["criteria"]["skill"] = skills
+        if len(morales) == 2:
+            self.body["variables"]["criteria"]["morale"] = morales
         
     def marketplace(self):
         r = requests.post("https://graphql-gateway.axieinfinity.com/graphql", json=self.body)
         data = json.loads(r.text)['data']['axies']
         return data
-
+    
 
 def message(queries, ethusd):
     
@@ -77,8 +90,17 @@ def message(queries, ethusd):
         criteria = ac.body["variables"]["criteria"]
 
         content += f'[Axie {i+1} Marketplace]({query}) - Total {total}\n'
-        content += f'```Class: {json.dumps(criteria["classes"])}\nPart: {json.dumps(criteria["parts"])}\nSpeed: {json.dumps(criteria["speed"])}\nHP: {json.dumps(criteria["hp"])}```'
-    
+        content += f'```Class: {json.dumps(criteria["classes"])}\nPart: {json.dumps(criteria["parts"])}'
+        if len(criteria["speed"]) == 2:
+            content += f'\nSpeed: {json.dumps(criteria["speed"])}'
+        if len(criteria["hp"]) == 2:
+            content += f'\HP: {json.dumps(criteria["hp"])}'
+        if len(criteria["skill"]) == 2:
+            content += f'\nSkill: {json.dumps(criteria["skill"])}'
+        if len(criteria["morale"]) == 2:
+            content += f'\nMorale: {json.dumps(criteria["morale"])}'
+        content += '```'
+        
         axie = data['results'][0]
         ethprice = round(float(axie["auction"]["currentPriceUSD"])/ethusd, 3)
         footer = f'{ethprice} ETH - [{axie["id"]}](https://marketplace.axieinfinity.com/axie/{axie["id"]}) ({axie["name"]})\n\n'
